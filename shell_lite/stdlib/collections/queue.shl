@@ -1,0 +1,13 @@
+thing queue
+    has arr = []
+    
+    can push a
+        arr.add(a)
+    can pop
+        give arr.pop(0)
+    can peek 
+        give arr[0]
+    can isEmpty 
+        if len(arr) == 0
+            return true
+        return false

@@ -1,0 +1,13 @@
+thing stack
+    has arr = []
+
+    can push a 
+        arr.add(a)
+    can peek
+        give arr[-1]
+    can pop
+        give arr.pop()
+    can isEmpty
+        if len(arr) == 0
+            give true
+        give false

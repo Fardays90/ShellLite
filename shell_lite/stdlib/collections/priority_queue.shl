@@ -1,0 +1,43 @@
+thing PriorityQueue
+    has arr = []
+    has comparator = fn a,b => a - b
+    can swap i,j
+        temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+
+    can push item
+        arr.add(item)
+        swim(len(arr) - 1)
+
+    can pop
+        swap(0, len(arr) - 1)
+        elem = arr.pop()
+        sink(0)
+        give elem
+
+    can isEmpty
+        if len(arr) == 0
+            give true
+        give false
+
+    can peek
+        give arr[0]
+
+    can swim i
+        while i > 0 and comparator(arr[i], arr[(i - 1) / 2]) < 0
+            swap(i, (i - 1) / 2)
+            i = (i - 1) / 2
+    can sink i
+        n = len(arr)
+        while (2 * i) + 1 < n
+            j = (2 * i) + 1
+            if j + 1 < n and comparator(arr[j], arr[j+1]) < 0
+                j++
+            if comparator(arr[j], arr[i]) >= 0
+                break
+            swap(i, j)
+            i = j
+
+
+
