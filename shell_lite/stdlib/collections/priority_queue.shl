@@ -39,5 +39,3 @@ thing PriorityQueue
             swap(i, j)
             i = j
 
-
-

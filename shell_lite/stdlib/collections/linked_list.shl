@@ -1,0 +1,68 @@
+thing node
+    has val
+    has next = null
+
+thing linked_list
+    has head = null
+    has tail = null
+
+    can append v
+        new_node = make node
+        new_node.val = v
+        if head == null
+            head = new_node
+            tail = head
+        else
+            tail.next = new_node
+            tail = tail.next
+    
+    can prepend v
+        new_node = make node
+        new_node.val = v
+        if head == null
+            head = new_node
+            tail = head
+        else
+            new_node.next = head
+            head = new_node
+    
+    can isEmpty
+        if head == null
+            give true
+        give false
+    
+    can print
+        temp = head
+        while temp != null
+            say temp.val
+            temp = temp.next
+    
+    can delete val
+        if isEmpty()
+            give
+        if head.val == val
+            next_node = head.next
+            head = next_node
+            return
+        temp = head
+        found = false
+        while temp.next != null 
+            if temp.next.val == val
+                found = true
+                break
+            temp = temp.next
+        if found 
+            temp.next = temp.next.next
+
+    can size
+        count = 0
+        temp = head
+        while temp != null
+            count++
+            temp = temp.next
+        give count
+    
+        
+
+
+    
